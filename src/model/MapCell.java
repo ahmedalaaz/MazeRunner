@@ -1,24 +1,31 @@
 package model;
 
+import java.io.File;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 public abstract class MapCell extends AnchorPane implements ICell{
 	protected double x;
 	protected double y;
-	final Image TREE_IMAGE = new Image(getClass().getResource("/images/tree.png").toString());
-	final Image ROCKS_IMAGE = new Image(getClass().getResource("/images/rocks.png").toString());
-	final Image ARMOR_IMAGE = new Image(getClass().getResource("/images/armor.png").toString());
-	final Image BLUE_GEM_IMAGE = new Image(getClass().getResource("/images/blueGem.png").toString());
-	final Image CHECK_POINT_IMAGE = new Image(getClass().getResource("/images/checkPoint.png").toString());
-	final Image GREEN_GEM_IMAGE = new Image(getClass().getResource("/images/greenGem.png").toString());
-	final Image HEALTH_POTION_IMAGE = new Image(getClass().getResource("/images/healthPotion.png").toString());
-	final Image MUD_IMAGE = new Image(getClass().getResource("/images/mud.png").toString());
-	final Image RED_GEM_IMAGE = new Image(getClass().getResource("/images/redGem.png").toString());
-	final Image SPEED_POTION_IMAGE = new Image(getClass().getResource("/images/speedPotion.png").toString());
-	final Image STONE_IMAGE = new Image(getClass().getResource("/images/stone.png").toString());
-	final Image WATER_IMAGE = new Image(getClass().getResource("/images/water.png").toString());
+	static File img = new File("resources/images/tree.png");
+	
+	final static Image TREE_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/tree.png").toExternalForm());
+	final static Image ROCKS_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/rocks.png").toExternalForm());
+	final static Image ARMOR_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/armor.png").toExternalForm());
+	final static Image BLUE_GEM_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/blueGem.png").toExternalForm());
+	final static Image CHECK_POINT_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/checkPoint.png").toExternalForm());
+	final static Image GREEN_GEM_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/greenGem.png").toExternalForm());
+	final static Image HEALTH_POTION_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/healthPotion.png").toExternalForm());
+	final static Image MUD_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/mud.png").toExternalForm());
+	final static Image RED_GEM_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/redGem.png").toExternalForm());
+	final static Image SPEED_POTION_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/speedPotion.png").toExternalForm());
+	final static Image STONE_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/stone.png").toExternalForm());
+	final static Image WATER_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/water.png").toExternalForm());
+	final static Image COLLISON_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/collision.png").toExternalForm());
+	final static Image WAY_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/way.jpg").toExternalForm());
 	
 	protected Image image;
 	protected ImageView imageView;
@@ -32,11 +39,18 @@ public abstract class MapCell extends AnchorPane implements ICell{
 		this.y = y;
 		this.image = image;
 		this.imageView = new ImageView(image);
+		this.imageView.setFitWidth(ICell.WALL_WIDTH);
+		this.imageView.setFitHeight(ICell.WALL_HEIGHT);
+		this.setPrefSize(ICell.WALL_WIDTH, ICell.WALL_HEIGHT);
+		this.getChildren().add(imageView);
 	}
 
 	@Override
 	public void addToView(Object map) {
-
+		Pane root = (Pane) map;
+		root.getChildren().add(this);
+		this.setLayoutX(x);
+		this.setLayoutY(y);
 	}
 
 	@Override
@@ -52,11 +66,13 @@ public abstract class MapCell extends AnchorPane implements ICell{
 	@Override
 	public void setX(double x) {
 		this.x = x;
+		
 	}
 
 	@Override
 	public void setY(double y) {
 		this.y = y;
+	
 	}
 
 }
