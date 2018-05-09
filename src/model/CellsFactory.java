@@ -9,7 +9,7 @@ public class CellsFactory {
 		GiftsFactory giftsFactory =  new GiftsFactory();
 		MapCell ret = null;
 		switch(symbol) {
-		case MapCell.BOMB_SYMBOL : ret = new Test(x, y, MapCell.TREE_IMAGE);
+		case MapCell.BOMB_SYMBOL : ret = new Test(x, y, MapCell.ROCKS_IMAGE);
 			break;
 		case MapCell.COIN_SYMBOL :
 			ret = giftsFactory.getGiftInstance(x, y,MapCell.WAY_IMAGE);
@@ -27,7 +27,7 @@ public class CellsFactory {
 			break;
 			
 		case MapCell.TREE_SYMBOL:
-			ret = new Wall(x, y, MapCell.STONE_IMAGE, true, 100, 0.8);
+			ret = new Wall(x, y, MapCell.TREE_IMAGE, true, 100, 0.8);
 			break;
 		case MapCell.WALL_SYMBOL : ret = new Test(x, y, MapCell.STONE_IMAGE);
 			break;
