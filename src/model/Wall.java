@@ -2,14 +2,12 @@ package model;
 
 import javafx.scene.image.Image;
 
-public abstract class Wall extends MapCell{
+public class Wall extends MapCell{
 protected boolean destroyable; 
 private double health; // if health < =  0 then it is not an obstacle !
 private double strengthRatio;
 public Wall(double x, double y, Image image, boolean destroyable, double health, double strengthRatio) {
 	super(x, y, image);
-	this.setPrefWidth(ICell.WALL_WIDTH);
-	this.setPrefHeight(ICell.WALL_HEIGHT);
 	this.destroyable = destroyable;
 	this.health = health;
 	this.strengthRatio = strengthRatio;
@@ -36,6 +34,11 @@ public double getStrengthRatio() {
 }
 public void setStrengthRatio(double strengthRatio) {
 	this.strengthRatio = strengthRatio;
+}
+@Override
+public String getCellName() {
+	// TODO Auto-generated method stub
+	return "Wall";
 }
 
 
