@@ -12,7 +12,7 @@ public abstract class MapCell extends AnchorPane implements ICell{
 	protected double y;
 	static File img = new File("resources/images/tree.png");
 	
-	final static Image TREE_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/tree.png").toExternalForm());
+	final static Image TREE_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/tree.jpg").toExternalForm());
 	final static Image ROCKS_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/rocks.png").toExternalForm());
 	final static Image ARMOR_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/armor.png").toExternalForm());
 	final static Image BLUE_GEM_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/blueGem.png").toExternalForm());

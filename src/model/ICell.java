@@ -35,8 +35,8 @@ public interface ICell {
 	
 	
 	
-	final double WALL_WIDTH = 43;
-	final double WALL_HEIGHT= 20;
+	final double WALL_WIDTH = 44.5;
+	final double WALL_HEIGHT= 21.33;
 	
 	public void addToView(Object map);
 	
