@@ -10,7 +10,8 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 public class Player extends MapCell implements Subject {
-
+	
+	public int playerScoreCounter=0;
 	public ImageView playerImageView;
 	SpriteSheet spriteSheet;
 	private int health = 100;
@@ -122,6 +123,7 @@ public class Player extends MapCell implements Subject {
 	}
 	public void increaseScore(int increase) {
 		this.setScore( this.getScore() + increase );
+		playerScoreCounter+=increase;
 		notifyObservers(getHealth(), getScore());
 		
 		

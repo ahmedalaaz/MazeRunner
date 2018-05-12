@@ -6,18 +6,22 @@ import java.util.ArrayList;
 import javafx.scene.canvas.Canvas;
 
 public class Originator {
-	private Canvas canvas;
+	private Player player;
+	//private MapCell[][] map;
 
-	public void set(Canvas canvas) {
-		this.canvas = canvas;
+	public void setPlayer(Player player) {
+		this.player=player;
 	}
+	/*public void setMap(MapCell[][]map) {
+		this.map=map;
+	}*/
 
 	public Memento storedInMemento() {
-		return new Memento(canvas);
+		return new Memento(player);
 	}
 
-	public Canvas restoreFromMemento(Memento m) {
-		canvas = m.getSavedCanvas();
-		return canvas;
+	public Player restorePlayerFromMemento(Memento m) {
+		player = m.getSavedPlayer();
+		return player;
 	}
 }

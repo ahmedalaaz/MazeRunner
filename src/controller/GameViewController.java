@@ -11,6 +11,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import model.Bullet;
+import model.CheckPoints;
 import model.CollisionChecker;
 import model.ICell;
 import model.MapCell;
@@ -125,6 +126,11 @@ public class GameViewController implements Initializable {
 		}
 		CollisionChecker.getInstance(map).takeGift(player.playerImageView);
 		CollisionChecker.getInstance(map).checkBomb(player.playerImageView);
+		if(player.playerScoreCounter>=35) {
+			CheckPoints cp = new CheckPoints(); 
+			player.playerScoreCounter-=35;
+			cp.addNewCheckPoint(player);	
+		}
 		
 	}
 	public boolean isPressed(KeyCode c) {
