@@ -14,15 +14,15 @@ public class Properties extends HBox implements Observer {
     public Label ScoreName = new Label("Score: ");;
     public Label health=new Label();
     public Label Score=new Label();
-
     public Properties() {
         //healthName =new Label("Health: ");
        // ScoreName=new Label("Score: ");
+    	MapGenerator.getInstance().getPlayer().addObserver(this);
     healthName.setStyle("-fx-font-weight: bold");
     ScoreName.setStyle("-fx-font-weight: bold");
     health.setStyle("-fx-font-weight: bold");
     Score.setStyle("-fx-font-weight: bold");
-    health.setText("10");
+    health.setText("100");
     Score.setText("0");
     healthName.setTextFill(Color.RED);
     health.setTextFill(Color.RED);

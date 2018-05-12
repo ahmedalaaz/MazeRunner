@@ -6,13 +6,13 @@ import javafx.scene.image.ImageView;
 
 public class SpriteAnimation extends Transition {
 
-	private final ImageView imageView;
-	private final int count;
-	private final int columns;
-	private final int offsetX;
-	private final int offsetY;
-	private final int width;
-	private final int height;
+	private  ImageView imageView;
+	private int count;
+	private int columns;
+	private int offsetX;
+	private int offsetY;
+	private int width;
+	private int height;
 
 	public SpriteAnimation(SpriteSheet spriteSheet) {
 		this.imageView = spriteSheet.getImageView();
@@ -35,4 +35,48 @@ public class SpriteAnimation extends Transition {
 		imageView.setViewport(new Rectangle2D(x, y, width, height));
 
 	}
+	public ImageView getImageView() {
+		return imageView;
+	}
+	public int getCount() {
+		return count;
+	}
+	public int getColumns() {
+		return columns;
+	}
+	public int getOffsetX() {
+		return offsetX;
+	}
+	public int getOffsetY() {
+		return offsetY;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setImageView(ImageView imageView) {
+		this.imageView = imageView;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public void setColumns(int columns) {
+		this.columns = columns;
+	}
+	public void setOffsetX(int offsetX) {
+		this.offsetX = offsetX;
+	}
+	public void setOffsetY(int offsetY) {
+		this.offsetY = offsetY;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	
+	
 }

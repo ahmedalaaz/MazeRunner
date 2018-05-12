@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -10,6 +11,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,23 +19,29 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import model.MusicPlayer;
 
 public class MainViewController implements Initializable{
 	@FXML
-	AnchorPane difficultyChooserPane;
+	private AnchorPane difficultyChooserPane;
 	@FXML
-	AnchorPane levelChooserPane;
+	private AnchorPane levelChooserPane;
 	@FXML
-	ToggleGroup levelsToggleGroup;
+	private ToggleGroup levelsToggleGroup;
 	@FXML
-	ToggleGroup difficultyToggleGroup;
+	private ToggleGroup difficultyToggleGroup;
 	@FXML
-	JFXButton playBtn;
+	private JFXButton playBtn;
 	@FXML
-	AnchorPane rootPane;
+	private AnchorPane rootPane;
+	static FXMLLoader loader;
+	public HashMap < KeyCode,Boolean> keyCodeMap =new HashMap<>();
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		playBtn.setOnAction((event)->{
@@ -64,14 +72,35 @@ public class MainViewController implements Initializable{
 		try {
 		Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		File fxml =  new File("resources/views/" + name);
-		Parent Root = FXMLLoader.load(fxml.toURI().toURL());
+		loader = new FXMLLoader(); 
+		Parent Root =loader.load(fxml.toURI().toURL());
 		Scene Scene = new Scene(Root);
 		primaryStage.hide();
 		primaryStage.setScene(Scene);
+		Scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+			MainViewController.this.keyCodeMap.put(event.getCode(), true);
+
+			}
+		});
+		Scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+
+			@Override
+			public void handle(KeyEvent event) {
+				 MainViewController.this.keyCodeMap.put(event.getCode(), false);
+
+			}
+		});
+		MusicPlayer player = new MusicPlayer(new File("resources/music/bgMusic.wav"));
+		player.playAsyncIndefinite();
 		primaryStage.show();
 	}catch(Exception e) {
 		e.printStackTrace();
 	}
 	}
-
+	public static GameViewController getGameController() {
+		return MainViewController.loader.getController();
+	}
 }

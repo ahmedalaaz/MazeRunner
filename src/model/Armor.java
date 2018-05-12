@@ -1,7 +1,10 @@
 package model;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class Armor extends Gift{
 	private ImageView armorImageView;
@@ -25,6 +28,18 @@ public class Armor extends Gift{
 	@Override
 	public void onGiftTaken() {
 		// TODO implement this
+		super.onGiftTaken();
+		FadeTransition fadeTransition =  new FadeTransition(Duration.millis(300), this.armorImageView);
+		fadeTransition.setFromValue(this.armorImageView.getOpacity()); 
+		fadeTransition.setToValue(0);
+		fadeTransition.setInterpolator(Interpolator.EASE_BOTH);
+		fadeTransition.setOnFinished((event) -> {
+		this.getChildren().remove(this.armorImageView);
+		//TODO play sound
+		});
+		fadeTransition.play();
+
+
 		System.out.println("Armor Taken !");
 		
 	}

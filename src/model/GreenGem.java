@@ -1,7 +1,10 @@
 package model;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class GreenGem extends Gift {
 	private ImageView greenGemImageView;
@@ -17,6 +20,18 @@ public class GreenGem extends Gift {
 	@Override
 	public void onGiftTaken() {
 		// TODO implement this
+		super.onGiftTaken();
+		FadeTransition fadeTransition =  new FadeTransition(Duration.millis(300), this.greenGemImageView);
+		fadeTransition.setFromValue(this.greenGemImageView.getOpacity()); 
+		fadeTransition.setToValue(0);
+		fadeTransition.setInterpolator(Interpolator.EASE_BOTH);
+		fadeTransition.setOnFinished((event) -> {
+		this.getChildren().remove(this.greenGemImageView);
+		//TODO play sound
+		});
+		fadeTransition.play();
+
+		MapGenerator.getInstance().getPlayer().increaseScore(10);
 		System.out.println("Green Gem taken !");
 		
 	}

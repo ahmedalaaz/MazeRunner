@@ -1,5 +1,6 @@
 package model;
 
+import javafx.stage.Screen;
 
 public interface ICell {
 	final String STONE = "Stone";
@@ -10,6 +11,7 @@ public interface ICell {
 	final String WAY= "Way";
 	final String TREE= "Tree";
 	final String WATER= "Water";
+	final String WALL = "Wall";
 	final String ROCKET_MONSTER= "RocketMonster";
 	
 	final int GIFTS_NUMBER = 6;
@@ -33,10 +35,8 @@ public interface ICell {
 	final char WATER_SYMBOL = '-';
 	final char CHECK_POINT_SYMBOL = '*';
 	
-	
-	
-	final double WALL_WIDTH = 44.5;
-	final double WALL_HEIGHT= 21.33;
+	final double WALL_WIDTH = (Screen.getPrimary().getVisualBounds().getWidth() -20) / 30;
+	final double WALL_HEIGHT= (Screen.getPrimary().getVisualBounds().getHeight() -100) / 30;
 	
 	public void addToView(Object map);
 	
