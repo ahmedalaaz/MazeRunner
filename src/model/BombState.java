@@ -3,6 +3,7 @@ package model;
 import java.io.File;
 
 import javafx.animation.AnimationTimer;
+import javafx.scene.image.ImageView;
 
 public interface BombState {
 	public void triggerBomb(int damage);
@@ -27,6 +28,7 @@ class Poison implements BombState{
 		MusicPlayer musicPlayer  = new MusicPlayer(new File("resources/music/bomb.wav"));
 		musicPlayer .playAsync();
 		totalDamage = damage;
+		MapGenerator.getInstance().getPlayer().updateSpriteSheet(new ImageView(MapCell.POISONED_WIZARD_PLAYER_IMAGE));
 		timer = new AnimationTimer() {
 			@Override
 			public void handle(long now) {
@@ -38,11 +40,12 @@ class Poison implements BombState{
 	}
 	private void decreaseHealth(int damage) {
 		current = System.currentTimeMillis();
-		if(current - previousDecrease <= 1000)return;
+		if(current - previousDecrease <= 2000)return;
 		previousDecrease = current;
 		Player player =  MapGenerator.getInstance().getPlayer();
 		if(player.getHealth() <= 0 || currentDamageDealt == totalDamage) {
 			timer.stop();
+			MapGenerator.getInstance().getPlayer().updateSpriteSheet(new ImageView(MapCell.WIZARD_PLAYER_IMAGE));
 		}else {
 			currentDamageDealt += 5;
 			player.decreaseHealth(damage);
@@ -51,7 +54,7 @@ class Poison implements BombState{
 	
 }
 class LowerSpeed implements BombState{
-	private long total = 5000;
+	private long total = 10000;
 	private long currentTime = System.currentTimeMillis();
 	private long start = System.currentTimeMillis();
 	private AnimationTimer timer;

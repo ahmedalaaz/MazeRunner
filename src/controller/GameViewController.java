@@ -6,27 +6,37 @@ import java.util.ResourceBundle;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import model.Bullet;
 import model.CheckPoints;
 import model.CollisionChecker;
 import model.ICell;
 import model.MapCell;
 import model.MapGenerator;
+import model.Observer;
 import model.Player;
-import model.Properties;
 import view.MainView;
 
-public class GameViewController implements Initializable {
+public class GameViewController implements Initializable,Observer {
 	@FXML
 	private AnchorPane infoPanel;
 	@FXML
 	private AnchorPane gamePane;
+	@FXML
+	private Label healthLabel;
+	@FXML
+	private Label scoreLabel;
+	@FXML
+	private Label livesLabel;
+	@FXML
+	private ImageView heartImageView;
 	private AnimationTimer playerAnimationTimer;
 	private Player player;
+	private Image heartImage = new Image(MapCell.class.getClassLoader().getResource("images/heart.png").toExternalForm());
 	private MapCell[][] map;
 	private KeyCode lastPressed;
 	private Image bulletImage;
@@ -34,7 +44,9 @@ public class GameViewController implements Initializable {
 	private long prevShoot = System.currentTimeMillis();
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		heartImageView.setImage(heartImage);
+		heartImageView.setFitHeight(ICell.WALL_HEIGHT*2);
+		heartImageView.setFitWidth(ICell.WALL_WIDTH*2);
 		MapGenerator mapGenerator = MapGenerator.getInstance();
 		map = mapGenerator.getAllCells(MainView.getController().getSelectedLevel());
 		for (int i = 0; i < 30; i++)
@@ -43,6 +55,8 @@ public class GameViewController implements Initializable {
 			}
 		mapGenerator.addStartEndToView(gamePane);
 		player = mapGenerator.getPlayer();
+		new CheckPoints().addNewCheckPoint(player);
+		player.addObserver(this);
 		playerAnimationTimer = new AnimationTimer() {
 			@Override
 			public void handle(long now) {
@@ -50,9 +64,10 @@ public class GameViewController implements Initializable {
 			}
 		};
 		playerAnimationTimer.start();
-		gamePane.setLayoutY(45);
-		infoPanel.setLayoutY(0);
-		infoPanel.getChildren().add(new Properties());
+		gamePane.setLayoutY(68);
+		gamePane.setLayoutX(5);
+		infoPanel.setLayoutY(5);
+		//infoPanel.getChildren().add(new Properties());
 	}
 
 	public void update() {
@@ -141,5 +156,12 @@ public class GameViewController implements Initializable {
 	}
 	public Player getPlayer() {
 		return this.player;
+	}
+
+	@Override
+	public void update(int health, int score ,int lives) {
+		this.healthLabel.setText(String.valueOf(health));
+		this.scoreLabel.setText(String.valueOf(score));
+		this.livesLabel.setText(String.valueOf(lives));
 	}
 }

@@ -1,6 +1,8 @@
 package model;
 
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 public class CollisionChecker {
 	private static CollisionChecker mInstance;

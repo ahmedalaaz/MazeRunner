@@ -267,8 +267,8 @@ public class MainViewController implements Initializable {
 
 				}
 			});
-			MusicPlayer player = new MusicPlayer(new File("resources/music/bgMusic.wav"));
-			player.playAsyncIndefinite();
+			MusicPlayer mainBgMusic  = new MusicPlayer(new File("resources/music/bgMusic.wav"));
+			mainBgMusic.playAsyncIndefinite();
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
