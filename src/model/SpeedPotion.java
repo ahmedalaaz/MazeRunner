@@ -1,7 +1,10 @@
 package model;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class SpeedPotion extends Gift {
 	private ImageView speedPotionImageView;
@@ -18,6 +21,7 @@ public class SpeedPotion extends Gift {
 	@Override
 	public String getCellName() {
 		// TODO Auto-generated method stub
+		
 		return "SpeedPotion";
 	}
 
@@ -25,6 +29,17 @@ public class SpeedPotion extends Gift {
 	@Override
 	public void onGiftTaken() {
 		// TODO implement this
+		super.onGiftTaken();
+		FadeTransition fadeTransition =  new FadeTransition(Duration.millis(300), this.speedPotionImageView);
+		fadeTransition.setFromValue(this.speedPotionImageView.getOpacity()); 
+		fadeTransition.setToValue(0);
+		fadeTransition.setInterpolator(Interpolator.EASE_BOTH);
+		fadeTransition.setOnFinished((event) -> {
+		this.getChildren().remove(this.speedPotionImageView);
+		//TODO play sound
+		});
+		fadeTransition.play();
+
 		System.out.println("Speed potion taken !");
 	}
 
