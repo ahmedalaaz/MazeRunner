@@ -17,7 +17,7 @@ public class Player extends MapCell implements Subject {
 	private int health = 100;
 	public SpriteAnimation animation;
 	private int score = 0;
-	public static double speed = 0.3;
+	public static double speed = 1;
 	ArrayList<Observer> observers = new ArrayList<>();
 	Image collisionImage = COLLISON_IMAGE;
 	public Player(ImageView imageView, double x, double y, Image image) {
