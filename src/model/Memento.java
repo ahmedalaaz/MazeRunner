@@ -6,13 +6,19 @@ import java.util.ArrayList;
 import javafx.scene.canvas.Canvas;
 
 public class Memento {
-	private Canvas canvas;
+	//private MapCell[][] map;
+	private Player player;
+	
 
-	public Memento(Canvas canvas) {
-		this.canvas = canvas;
+	public Memento(Player player) {
+		//this.map=map;
+		this.player=player;
 	}
 
-	public Canvas getSavedCanvas() {
-		return canvas;
+	public Player getSavedPlayer() {
+		return player;
 	}
+	/*public MapCell[][] getSavedMap(){
+		return map;
+	}*/
 }
