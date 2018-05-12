@@ -1,7 +1,12 @@
 package model;
 
+import controller.GameViewController;
+import controller.MainViewController;
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class HealthPotion extends Gift{
 	private ImageView healthPotionImageView;
@@ -17,6 +22,17 @@ public class HealthPotion extends Gift{
 	@Override
 	public void onGiftTaken() {
 		// TODO implement this
+		super.onGiftTaken();
+		FadeTransition fadeTransition =  new FadeTransition(Duration.millis(300), this.healthPotionImageView);
+		fadeTransition.setFromValue(this.healthPotionImageView.getOpacity()); 
+		fadeTransition.setToValue(0);
+		fadeTransition.setInterpolator(Interpolator.EASE_BOTH);
+		fadeTransition.setOnFinished((event) -> {
+		this.getChildren().remove(this.healthPotionImageView);
+		//TODO play sound
+		});
+		fadeTransition.play();
+		MapGenerator.getInstance().getPlayer().increaseHealth(15);
 		System.out.println("Health potion taken !");
 		
 	}

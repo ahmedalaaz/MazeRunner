@@ -2,7 +2,6 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameViewController">
    <children>
       <AnchorPane fx:id="infoPanel" layoutX="5.0" layoutY="8.0" prefHeight="80.0" prefWidth="350.0" />

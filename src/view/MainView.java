@@ -2,19 +2,16 @@ package view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import model.LevelsReader;
-import model.MapCell;
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.net.URL;
 import java.util.HashMap;
 
 import controller.*;
-
 public class MainView extends Application{
 	private static FXMLLoader myLoader;
 	public static HashMap<String, Character[][]> levels;
@@ -32,6 +29,11 @@ public class MainView extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setScene(getMainScene());
+		Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+		primaryStage.setX(primaryScreenBounds.getMinX());
+		primaryStage.setY(primaryScreenBounds.getMinY());
+		primaryStage.setWidth(primaryScreenBounds.getWidth());
+		primaryStage.setHeight(primaryScreenBounds.getHeight());
 		primaryStage.setResizable(true);
 		primaryStage.setTitle("Maze");
 		primaryStage.show();
@@ -43,10 +45,10 @@ public class MainView extends Application{
 		myLoader = loader;
 		Parent mainViewRoot = loader.load();
 		Scene scene = new Scene(mainViewRoot);
-		return scene;
+				return scene;
 	}
 	public static MainViewController getController() {
 		return myLoader.getController();
 	}
-
+	
 }
