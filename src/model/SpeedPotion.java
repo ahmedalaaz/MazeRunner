@@ -1,5 +1,6 @@
 package model;
 
+import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.scene.image.Image;
@@ -36,10 +37,23 @@ public class SpeedPotion extends Gift {
 		fadeTransition.setInterpolator(Interpolator.EASE_BOTH);
 		fadeTransition.setOnFinished((event) -> {
 		this.getChildren().remove(this.speedPotionImageView);
-		//TODO play sound
 		});
 		fadeTransition.play();
-
+		long start = System.currentTimeMillis();
+		Player.speed = 1;
+		AnimationTimer timer = new AnimationTimer() {
+			
+			@Override
+			public void handle(long now) {
+				long current = System.currentTimeMillis();
+				if(current - start >= 10000) {
+					Player.speed = 0.3;
+					this.stop();
+					System.out.println("Stoped!!");
+				}
+			}
+		};
+		timer.start();
 		System.out.println("Speed potion taken !");
 	}
 

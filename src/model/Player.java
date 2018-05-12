@@ -34,12 +34,12 @@ public class Player extends MapCell implements Subject {
 		super.addToView(map);
 		Pane root = (Pane) map;
 		root.getChildren().add(playerImageView);
-		this.playerImageView.setFitHeight(ICell.WALL_HEIGHT-6);
-		this.playerImageView.setFitWidth(ICell.WALL_WIDTH-3);
-		playerImageView.maxHeight(ICell.WALL_HEIGHT-6);
-		playerImageView.maxWidth(ICell.WALL_WIDTH-3);
-		playerImageView.setLayoutX(x-1.5);
-		playerImageView.setLayoutY(y+2.5);
+		this.playerImageView.setFitHeight(ICell.WALL_HEIGHT-8);
+		this.playerImageView.setFitWidth(ICell.WALL_WIDTH-8);
+		playerImageView.maxHeight(ICell.WALL_HEIGHT-8);
+		playerImageView.maxWidth(ICell.WALL_WIDTH-8);
+		playerImageView.setLayoutX(x+8);
+		playerImageView.setLayoutY(y+4);
 	}
 	public void MoveX(double x) {
 		boolean right = x > 0 ? true : false;

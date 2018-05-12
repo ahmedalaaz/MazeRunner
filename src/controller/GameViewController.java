@@ -35,11 +35,12 @@ public class GameViewController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		MapGenerator mapGenerator = MapGenerator.getInstance();
-		map = mapGenerator.getAllCells();
+		map = mapGenerator.getAllCells(MainView.getController().getSelectedLevel());
 		for (int i = 0; i < 30; i++)
 			for (int j = 0; j < 30; j++) {
 				map[i][j].addToView(gamePane);
 			}
+		mapGenerator.addStartEndToView(gamePane);
 		player = mapGenerator.getPlayer();
 		playerAnimationTimer = new AnimationTimer() {
 			@Override
@@ -126,17 +127,13 @@ public class GameViewController implements Initializable {
 		CollisionChecker.getInstance(map).checkBomb(player.playerImageView);
 		
 	}
-
 	public boolean isPressed(KeyCode c) {
 		return MainView.getController().keyCodeMap.getOrDefault(c, false);
 	}
-
 	public AnchorPane getGameRoot() {
 		return this.gamePane;
 	}
-
 	public Player getPlayer() {
 		return this.player;
 	}
-
 }

@@ -29,7 +29,6 @@ public class CellsFactory {
 			break;
 		case MapCell.START_SYMBOL: ret = new Player(new ImageView(MapCell.WIZARD_PLAYER_IMAGE),x, y, MapCell.WAY_IMAGE);
 			break;
-			
 		case MapCell.TREE_SYMBOL:
 			ret = new Wall(x, y, MapCell.TREE_IMAGE, true, 100, 1);
 			break;
@@ -40,8 +39,7 @@ public class CellsFactory {
 		case MapCell.WAY_SYMBOL: ret = new Test(x, y, MapCell.WAY_IMAGE);
 			break;
 		case MapCell.CHECK_POINT_SYMBOL: ret = new Test(x, y, MapCell.CHECK_POINT_IMAGE);
-		break;
-				
+		break;				
 		}
 		
 		return ret;

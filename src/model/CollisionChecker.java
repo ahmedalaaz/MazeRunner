@@ -18,13 +18,16 @@ public class CollisionChecker {
 	
 	public boolean canMove(ImageView movingImage) {
 		boolean can = true;
+		MapCell start = MapGenerator.getInstance().getStart();
+		MapCell end = MapGenerator.getInstance().getEnd();
+		
+		if(movingImage.getBoundsInParent().intersects(start.getBoundsInParent()) 
+				|| movingImage.getBoundsInParent().intersects(end.getBoundsInParent())) {
+			return false;
+		}
 		for(int i = 0 ; i <30 ; i++) {
 			for(int j = 0 ; j<30 ;j++) {
-				/*movingImage.intersects(
-			        movingImage.sceneToLocal(map[i][j].localToScene(
-			                map[i][j].getBoundsInLocal())))*/
 			if(map[i][j].getCellName().equals(ICell.WALL)&& movingImage.getBoundsInParent().intersects(map[i][j].getBoundsInParent())  ) {
-				//System.out.println("Intersect !!! " + " i : " + i + " j : " + j);
 				can  = false;
 				break;
 			}
