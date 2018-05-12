@@ -31,7 +31,8 @@ public interface ICell {
 	final char BOMB_SYMBOL = 'B';
 	final char GIFT_SYMBOL = 'G';
 	final char ROCKET_MONSTER_SYMBOL = 'R';
-	final char MONSTER_SPAWN_SYMBOL = 'M';
+	final char MONSTER_SPAWN_SYMBOL1 = 'M';
+	final char MONSTER_SPAWN_SYMBOL2 = 'N';
 	final char WATER_SYMBOL = '-';
 	final char CHECK_POINT_SYMBOL = '*';
 	

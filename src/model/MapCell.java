@@ -31,7 +31,8 @@ public abstract class MapCell extends AnchorPane implements ICell{
 	public final static Image LOWER_SPEED_BOMB_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/lowerSpeedBomb.png").toExternalForm());
 	public final static Image POISION_BOMB_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/posionBomb.png").toExternalForm());
 	public final static Image EXPLOSION_BOMB_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/explosionBomb.png").toExternalForm());
-	
+	public final static Image MONSTER_1_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/resizedmonster.png").toExternalForm());
+	public final static Image MONSTER_2_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/resizedmonster2.png").toExternalForm());
 	protected Image image;
 	protected ImageView imageView;
 

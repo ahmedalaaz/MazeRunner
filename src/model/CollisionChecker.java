@@ -74,6 +74,26 @@ public class CollisionChecker {
 		
 		return can;
 	}
+	
+	public boolean monsterWillStop(ImageView monsterImageView) {
+		boolean can = true;
+		for(int i = 0 ; i <30 ; i++) {
+			for(int j = 0 ; j<30 ;j++) {
+			if(map[i][j] instanceof Wall ) {
+				Wall x = (Wall)map[i][j];
+				if(!x.destroyable && monsterImageView.getBoundsInParent().intersects(map[i][j].getBoundsInParent())) {
+				can  = false;
+				break;
+				}
+			}
+		}
+			if(!can)break;
+		}
+		
+		
+		return can;
+	}
+	
 
 	public void checkBomb(ImageView playerImageView) {
 		boolean done = false;

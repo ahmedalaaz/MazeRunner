@@ -1,6 +1,6 @@
 .	.	R	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
 .	T	T	T	T	T	T	T	T	T	-	-	W	W	W	W	C	C	W	.	.	.	.	.	.	.	.	.	.	.
-S	W	W	-	-	-	-	W	W	T	-	-	W	*	.	.	W	M	W	-	-	-	W	W	W	T	T	C	-	.
+S	W	W	-	-	-	-	W	W	T	-	-	W	*	.	.	W	N	W	-	-	-	W	W	W	T	T	C	-	.
 .	W	B	W	T	W	W	W	W	.	T	T	W	.	.	.	W	.	.	.	.	.	.	W	W	W	W	W	-	.
 .	W	C	.	.	.	.	.	W	.	T	T	W	.	.	.	W	.	.	.	.	.	.	W	.	.	.	.	W	.
 .	W	.	.	.	.	.	.	W	B	G	T	W	.	.	.	W	T	T	T	T	.	.	W	-	-	-	-	W	.
