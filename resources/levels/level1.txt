@@ -1,5 +1,5 @@
 .	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.	.
-S	W	.	.	-	-	-	W	.	.	.	.	.	.	M	.	.	.	.	.	.	.	.	.	.	.	.	.	G	.
+S	W	.	.	-	-	-	W	.	.	.	.	.	.	N	.	.	.	.	.	.	.	.	.	.	.	.	.	G	.
 .	W	.	.	W	W	W	W	.	.	.	.	R	.	T	.	.	.	.	.	.	.	.	.	.	.	.	.	G	.
 .	W	.	.	W	.	.	W	W	W	W	C	W	.	T	.	-	-	W	W	W	C	W	W	T	T	W	W	W	.
 .	W	.	.	W	.	.	W	.	R	.	.	W	W	W	.	G	T	W	T	M	T	T	T	.	.	W	T	W	.
@@ -18,7 +18,7 @@ S	W	.	.	-	-	-	W	.	.	.	.	.	.	M	.	.	.	.	.	.	.	.	.	.	.	.	.	G	.
 .	G	.	.	T	.	.	W	T	B	.	.	W	.	G	.	.	T	W	.	T	.	W	T	T	W	.	.	W	.
 .	W	W	T	W	.	.	W	-	-	.	.	W	.	.	.	.	T	W	.	T	.	W	T	T	W	T	T	W	.
 .	W	T	T	W	.	.	W	T	G	.	.	W	T	T	T	T	W	W	.	T	.	W	T	T	W	.	T	.	.
-.	W	T	T	-	.	.	W	T	G	.	.	*	W	W	W	C	.	W	.	T	.	W	T	T	W	.	T	.	.
+.	W	T	T	-	.	.	W	T	G	.	.	W	W	W	W	C	.	W	.	T	.	W	T	T	W	.	T	.	.
 .	W	T	T	-	.	.	C	T	T	.	.	W	.	.	.	C	.	W	.	T	.	W	T	T	W	.	T	T	.
 .	W	T	T	-	T	T	W	T	T	.	.	W	.	G	.	W	.	W	.	T	.	W	T	T	W	.	T	T	.
 .	W	.	.	-	T	T	W	W	W	W	W	W	.	W	.	W	.	W	.	.	.	W	T	T	W	.	T	T	.

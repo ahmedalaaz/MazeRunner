@@ -21,9 +21,11 @@ public abstract class MapCell extends AnchorPane implements ICell{
 	public final static Image STONE_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/stone.png").toExternalForm());
 	public final static Image WATER_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/water.png").toExternalForm());
 	public final static Image COLLISON_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/collision.png").toExternalForm());
-	public final static Image WAY_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/way.jpg").toExternalForm());
+	public final static Image WAY_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/floor.jpg").toExternalForm());
 	public final static Image WINGER_PLAYER_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/winger.png").toExternalForm());
 	public final static Image WIZARD_PLAYER_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/wizard.png").toExternalForm());
+	public final static Image POISONED_WINGER_PLAYER_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/poisonedWinger.png").toExternalForm());
+	public final static Image POISONED_WIZARD_PLAYER_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/poisonedWizard.png").toExternalForm());
 	public final static Image LEFT_BULLET_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/leftBullet.png").toExternalForm());
 	public final static Image UP_BULLET_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/upBullet.png").toExternalForm());
 	public final static Image RIGHT_BULLET_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/rightBullet.png").toExternalForm());
@@ -31,7 +33,8 @@ public abstract class MapCell extends AnchorPane implements ICell{
 	public final static Image LOWER_SPEED_BOMB_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/lowerSpeedBomb.png").toExternalForm());
 	public final static Image POISION_BOMB_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/posionBomb.png").toExternalForm());
 	public final static Image EXPLOSION_BOMB_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/explosionBomb.png").toExternalForm());
-	
+	public final static Image MONSTER_1_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/resizedmonster.png").toExternalForm());
+	public final static Image MONSTER_2_IMAGE = new Image(MapCell.class.getClassLoader().getResource("images/resizedmonster2.png").toExternalForm());
 	protected Image image;
 	protected ImageView imageView;
 
