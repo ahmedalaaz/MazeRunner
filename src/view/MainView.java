@@ -29,11 +29,6 @@ public class MainView extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setScene(getMainScene());
-		Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-		primaryStage.setX(primaryScreenBounds.getMinX());
-		primaryStage.setY(primaryScreenBounds.getMinY());
-		primaryStage.setWidth(primaryScreenBounds.getWidth());
-		primaryStage.setHeight(primaryScreenBounds.getHeight());
 		primaryStage.setResizable(true);
 		primaryStage.setTitle("Maze");
 		primaryStage.show();
