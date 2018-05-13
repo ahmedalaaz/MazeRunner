@@ -2,6 +2,9 @@ package model;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
+import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
@@ -16,7 +19,19 @@ public class Armor extends Gift{
 		this.armorImageView.setFitHeight(ICell.WALL_HEIGHT);
 		this.armorImageView.setFitWidth(ICell.WALL_WIDTH);
 		this.getChildren().add(armorImageView);
-	
+		TranslateTransition translateTransition = new TranslateTransition(Duration.millis(500), armorImageView);
+		translateTransition.setFromX(0);
+		translateTransition.setToX(armorImageView.getLayoutX() + 2);
+		translateTransition.setCycleCount(1);
+		translateTransition.setRate(1);
+		translateTransition.setAutoReverse(true);
+
+		SequentialTransition sequentialTransition = new SequentialTransition();
+		sequentialTransition.getChildren().addAll(translateTransition);
+		sequentialTransition.setCycleCount(Timeline.INDEFINITE);
+		sequentialTransition.setAutoReverse(true);
+		sequentialTransition.play();
+
 	}
 	
 	@Override

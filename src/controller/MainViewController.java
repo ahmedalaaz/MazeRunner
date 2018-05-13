@@ -242,8 +242,8 @@ public class MainViewController implements Initializable {
 		try {
 			Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			File fxml = new File("resources/views/" + name);
-			loader = new FXMLLoader();
-			Parent Root = loader.load(fxml.toURI().toURL());
+			MainViewController.loader = new FXMLLoader();
+			Parent Root = MainViewController.loader.load(fxml.toURI().toURL());
 			Scene Scene = new Scene(Root);
 			primaryStage.hide();
 			primaryStage.setX(Screen.getPrimary().getVisualBounds().getMinX());

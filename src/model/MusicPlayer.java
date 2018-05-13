@@ -49,5 +49,21 @@ public class MusicPlayer {
 		thread.start();
 
 	}
+	public void playAsync(int count) {
+		final Task<?> task = new Task<Object>() {
+
+			@Override
+			protected Object call() throws Exception {
+				AudioClip audio = new AudioClip(music.toURI().toString());
+				audio.setCycleCount(count);
+				audio.setRate(2);
+				audio.play();
+				return null;
+			}
+		};
+		Thread thread = new Thread(task);
+		thread.start();
+
+	}
 
 }

@@ -92,6 +92,9 @@ public class Bullet extends ImageView {
 			}
 
 		}
+		if(CollisionChecker.getInstance().bulletWillShootMonster(bulletImageView)) {
+			stopBullet();
+		}
 	}
 
 	public void stopBullet() {

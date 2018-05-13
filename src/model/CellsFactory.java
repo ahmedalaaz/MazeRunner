@@ -23,9 +23,11 @@ public class CellsFactory {
 		case MapCell.GIFT_SYMBOL: 
 			ret = giftsFactory.getGiftInstance(x, y,MapCell.WAY_IMAGE);
 			break;
-		case MapCell.MONSTER_SPAWN_SYMBOL: ret = new Test(x, y, MapCell.TREE_IMAGE);
+		case MapCell.MONSTER_SPAWN_SYMBOL1: ret = MonsterA.getInstance(new ImageView(MapCell.MONSTER_1_IMAGE),x, y, MapCell.WAY_IMAGE);
 			break;
-		case MapCell.ROCKET_MONSTER_SYMBOL: ret = new Test(x, y, MapCell.TREE_IMAGE);
+		case MapCell.MONSTER_SPAWN_SYMBOL2: ret = new MonsterB(new ImageView(MapCell.MONSTER_2_IMAGE),x, y, MapCell.WAY_IMAGE);
+		break;
+		case MapCell.ROCKET_MONSTER_SYMBOL: ret = new Wall(x, y, MapCell.STONE_IMAGE, false, 100, 0.1);
 			break;
 		case MapCell.START_SYMBOL: ret = new Player(new ImageView(MapCell.WIZARD_PLAYER_IMAGE),x, y, MapCell.WAY_IMAGE);
 			break;
@@ -37,9 +39,7 @@ public class CellsFactory {
 		case MapCell.WATER_SYMBOL : ret = new Test(x, y, MapCell.WATER_IMAGE);
 			break;
 		case MapCell.WAY_SYMBOL: ret = new Test(x, y, MapCell.WAY_IMAGE);
-			break;
-		case MapCell.CHECK_POINT_SYMBOL: ret = new Test(x, y, MapCell.CHECK_POINT_IMAGE);
-		break;				
+			break;			
 		}
 		
 		return ret;

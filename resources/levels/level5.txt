@@ -3,8 +3,8 @@
 .	G	T	.	T	T	T	T	.	.	.	W	.	.	.	.	.	.	.	R	.	-	T	.	T	W	W	C	W	E
 .	C	T	.	T	.	W	W	.	.	.	W	.	.	.	.	.	.	.	.	.	W	T	.	T	W	B	B	W	.
 .	.	T	.	T	.	W	T	.	.	.	W	M	.	.	.	.	.	.	.	.	W	T	.	T	W	B	.	.	.
-.	.	T	.	B	.	W	T	-	-	T	T	T	T	T	T	T	T	T	T	T	T	T	T	T	W	W	.	.	G
-R	-	T	T	T	.	-	-	-	W	W	W	W	W	W	W	-	-	-	W	W	W	W	W	W	-	W	.	W	T
+.	.	T	.	B	.	W	T	-	-	T	T	T	T	T	T	T	T	T	T	T	T	T	T	T	W	W	.	.	.
+R	-	T	T	T	.	-	-	-	W	W	W	W	W	W	W	-	-	-	W	W	W	W	W	W	-	W	.	W	.
 .	-	.	.	W	-	-	.	.	.	.	R	.	.	.	.	W	T	T	T	T	W	T	T	T	-	W	.	W	.
 .	-	.	.	W	.	.	.	.	.	.	.	.	.	.	.	W	T	T	G	T	W	-	B	T	-	T	.	W	.
 .	-	-	-	W	B	W	W	B	W	W	W	C	.	.	.	B	B	B	T	T	T	-	G	B	W	T	.	W	.
@@ -23,7 +23,7 @@ S	W	W	.	W	W	W	-	-	-	W	W	W	W	B	T	W	.	.	W	.	.	T	W	T	W	.	.	W	.
 .	.	T	.	.	.	.	.	.	W	.	.	.	W	.	-	-	.	.	W	.	.	T	-	T	W	.	.	W	.
 .	.	T	.	.	-	-	-	-	W	.	.	.	W	.	W	-	.	.	W	W	.	T	-	T	W	.	.	B	.
 .	.	T	T	T	T	T	.	.	W	.	.	.	W	.	W	-	.	.	.	.	.	T	W	T	W	.	.	W	.
-.	.	T	C	C	G	T	.	.	W	W	W	W	W	.	W	-	*	W	W	W	.	T	W	T	W	W	T	W	.
+.	.	T	C	C	G	T	.	.	W	W	W	W	W	.	W	-	W	W	W	W	.	T	W	T	W	W	T	W	.
 R	.	T	T	T	T	T	.	.	W	.	T	T	C	.	W	-	W	W	T	W	.	B	W	.	.	W	T	W	.
 .	.	.	.	.	.	.	.	.	W	.	.	.	.	.	W	T	T	T	T	T	T	T	T	T	T	C	.	W	.
 .	C	W	G	W	-	-	B	W	W	W	W	-	-	-	W	W	W	W	-	-	-	W	W	B	G	B	.	.	.

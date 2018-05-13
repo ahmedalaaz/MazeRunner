@@ -4,6 +4,9 @@ import controller.GameViewController;
 import controller.MainViewController;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
+import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
@@ -17,6 +20,18 @@ public class HealthPotion extends Gift{
 		this.healthPotionImageView.setFitHeight(ICell.WALL_HEIGHT);
 		this.healthPotionImageView.setFitWidth(ICell.WALL_WIDTH);
 		this.getChildren().add(this.healthPotionImageView);
+		TranslateTransition translateTransition = new TranslateTransition(Duration.millis(500), healthPotionImageView);
+		translateTransition.setFromX(0);
+		translateTransition.setToX(healthPotionImageView.getLayoutX() + 2);
+		translateTransition.setCycleCount(1);
+		translateTransition.setRate(1);
+		translateTransition.setAutoReverse(true);
+
+		SequentialTransition sequentialTransition = new SequentialTransition();
+		sequentialTransition.getChildren().addAll(translateTransition);
+		sequentialTransition.setCycleCount(Timeline.INDEFINITE);
+		sequentialTransition.setAutoReverse(true);
+		sequentialTransition.play();
 	}
 
 	@Override

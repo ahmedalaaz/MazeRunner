@@ -154,9 +154,8 @@ public class Player extends MapCell implements Subject {
 				bg.stopBgMusic();
 			}
 			MusicPlayer losingPlayer = new MusicPlayer(new File("resources/music/lose.wav"));
-			losingPlayer .playAsync();
-			 notifyObservers(0, getScore(),0);
-
+			losingPlayer.playAsync(4);
+			notifyObservers(0, getScore(),0);
 		}
 		else notifyObservers(getHealth(), getScore(),getLives());
 		
